@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :admins
-  root 'welcome#home'
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
   
+  root 'welcome#home'
+
   resources :windows
   resources :sites
   resources :users

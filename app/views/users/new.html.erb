@@ -6,7 +6,9 @@
   <%= f.label :password %>
   <%= f.password_field :password %><br>
 
-  <h2>Do you manage, own, or work for a site that you would like to add?</h2>
+  <h2>Do you manage, own, or work for a site that you would like to add?</h2><br>
+  <%= f.label :site_admin %>
+  <%= f.check_box :site_admin %><br>
 
   <%= f.submit "Create User" %>
 <% end %>
