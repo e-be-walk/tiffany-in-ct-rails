@@ -1,12 +1,12 @@
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
+<h1>Create your own user profile:</h1>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
   <%= f.label :password %>
   <%= f.password_field :password %><br>
 
-  <%= f.label :site_admin %>
-  <%= f.check_box :site_admin %>
+  <h2>Do you manage, own, or work for a site that you would like to add?</h2>
 
   <%= f.submit "Create User" %>
 <% end %>

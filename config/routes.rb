@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :admins
   root 'welcome#home'
   
   resources :windows

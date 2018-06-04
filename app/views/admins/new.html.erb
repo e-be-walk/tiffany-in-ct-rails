@@ -1,0 +1,15 @@
+<%= form_for @admin, controller: 'admins', action: 'create' do |f| %>
+<h2>Do you manage, own, or work for a site that you would like to add?</h2><br> 
+  <h3>An administrator profile will enable you to upload your institution or site
+  making it available to all our researchers. Users and researchers can comment on
+  your site, suggesting or providing research, stories, and more. </h3><br>
+<h1>Create your own site administrator profile:</h1>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+
+  <%= f.submit "Create User" %>
+<% end %>
