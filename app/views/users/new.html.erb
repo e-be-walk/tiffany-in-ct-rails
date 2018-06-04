@@ -1,0 +1,12 @@
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.label :site_admin %>
+  <%= f.check_box :site_admin %>
+
+  <%= f.submit "Create User" %>
+<% end %>

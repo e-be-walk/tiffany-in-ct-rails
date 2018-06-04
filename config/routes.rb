@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'welcome#home'
+  
   resources :windows
   resources :sites
   resources :users
