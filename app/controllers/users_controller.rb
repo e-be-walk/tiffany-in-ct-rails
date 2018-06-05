@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :destroy]
 
   def show
     if logged_in?
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if @user = User.create(user_params)
+    if @user = User.new(user_params)
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
@@ -23,7 +24,15 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:name, :password)
+    params.require(:user).permit(
+      :name,
+      :password,
+      :site_admin
+    )
   end
 end

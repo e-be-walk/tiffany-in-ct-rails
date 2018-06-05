@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   get '/signin' => 'sessions#new'
-  post '/signin' => 'sessions#create'
+  post '/signin', to: 'sessions#create'
   get '/logout' => 'sessions#destroy'
-  get '/logout' => 'sessions#destroy'
-  
+  post '/logout', to: 'sessions#destroy'
+  get '/about' => 'welcome#about'
+  get '/index' => 'welcome#index'
   root 'welcome#home'
 
   resources :windows
