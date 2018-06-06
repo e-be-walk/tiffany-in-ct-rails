@@ -32,7 +32,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :name,
       :password,
-      :site_admin
+      :site_admin,
+      :uid
     )
   end
 end
