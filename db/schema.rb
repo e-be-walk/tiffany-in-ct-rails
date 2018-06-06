@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2018_06_04_194618) do
 
   create_table "sites", force: :cascade do |t|
     t.integer "user_id"
-    t.string "image"
     t.string "name"
     t.string "street_address"
     t.string "city"
@@ -41,7 +40,6 @@ ActiveRecord::Schema.define(version: 2018_06_04_194618) do
   create_table "windows", force: :cascade do |t|
     t.integer "user_id"
     t.integer "site_id"
-    t.string "image"
     t.string "name"
     t.integer "year_created"
     t.text "dedication"

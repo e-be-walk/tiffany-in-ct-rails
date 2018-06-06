@@ -1,6 +1,8 @@
 class SitesController < ApplicationController
 
   def show
+    @site = Site.find_by(id: params[:id])
+    @user = current_user
   end
 
   def new
@@ -8,14 +10,16 @@ class SitesController < ApplicationController
   end
 
   def create
-    @site = Site.new(site_params)
-    redirect_to site_path(@user, @site)
+    @site = Site.create(site_params)
+    @site.save
+    redirect_to site_path(@site)
   end
 
   private
 
   def site_params
     params.require(:site).permit(
+      :user_id,
       :name,
       :street_address,
       :city,
