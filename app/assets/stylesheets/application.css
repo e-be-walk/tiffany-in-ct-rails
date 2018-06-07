@@ -16,8 +16,9 @@
 
  /*/////// BACKGROUNDS ////////*/
 
- .background {
-   background: url(../images/tiffany_background.jpeg);
+ img.background {
+   position: fixed;
+   width: 100%;
    background-size: cover;
  }
 
@@ -39,4 +40,17 @@
 
 .p {
     font-family: 'EB Garamond', serif;
+  }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+  }
+
+  .clear {
+    clear:both;
   }
