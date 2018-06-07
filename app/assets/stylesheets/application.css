@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ /*/////// BACKGROUNDS ////////*/
+
+ .background {
+   background: url(../images/tiffany_background.jpeg);
+   background-size: cover;
+ }
+
+.navbar{
+   position: fixed;
+   top: 4;
+   right: 0;
+   width: 100%;
+   display: inline-block;
+   width: 25%;
+   margin: 0;
+   padding: 22px 0;
+   color: black;
+   text-align: center;
+   border-right: 1px solid #ccc;
+   text-decoration: none;
+   font-family: 'Corben', cursive
+ }
+
+.p {
+    font-family: 'EB Garamond', serif;
+  }
