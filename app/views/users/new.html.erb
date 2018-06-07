@@ -1,7 +1,10 @@
-<%= form_for @user, controller: 'sessions', action: 'create' do |f| %>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
 <h1>Create your own user profile:</h1>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
 
   <%= f.label :password %>
   <%= f.password_field :password %><br>
@@ -10,6 +13,7 @@
   <%= f.label :site_admin %>
   <%= f.check_box :site_admin %><br>
 
-  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
   <%= f.submit "Create User" %>
 <% end %>
+
+  <%= link_to('Log in with Facebook!', '/auth/facebook') %>

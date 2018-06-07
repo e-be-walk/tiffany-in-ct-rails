@@ -14,11 +14,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    if @user = User.create(user_params)
+    @user = User.create(user_params)
+    if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to '/'
+      redirect_to new_user_url
     end
   end
 
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
       :name,
       :password,
       :site_admin,
-      :uid
+      :email
     )
   end
 end
