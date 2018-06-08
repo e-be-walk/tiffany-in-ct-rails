@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get '/index' => 'welcome#index'
   root 'welcome#home'
 
-  resources :windows
-  resources :sites, only: [:create, :new, :show]
+
   resources :users
+    resources :sites, only: [:create, :new, :show, :update, :destroy]
+    resources :windows, only: [:create, :new, :show, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

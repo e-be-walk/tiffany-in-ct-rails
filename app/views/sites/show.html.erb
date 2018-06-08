@@ -6,3 +6,7 @@
 <h2><%= "#{@site.contact_info}" %></h2>
 <h2><%= "#{@site.accessibility}" %></h2>
 <p><%= "#{@site.site_info}" %></p>
+
+<% if @user.site_admin? %>
+<%= link_to('Add a window to your site', '/:id/windows/new') %>
+<% end %>
