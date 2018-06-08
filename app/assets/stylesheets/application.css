@@ -16,26 +16,36 @@
 
  /*/////// BACKGROUNDS ////////*/
 
- img.background {
+ /*img.background {
    position: fixed;
    width: 100%;
    background-size: cover;
+ }*/
+ body {
+   background-image: url(tiffanybackground.jpeg);
+   background-size: cover;
  }
 
-.navbar{
-   position: fixed;
-   top: 4;
-   right: 0;
+ .tiffany-background {
+  background: #efefef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(24%,#ffffff), color-stop(68%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+
+ #navbar {
+   top: 5;
    width: 100%;
-   display: inline-block;
-   width: 25%;
-   margin: 0;
-   padding: 22px 0;
-   color: black;
-   text-align: center;
-   border-right: 1px solid #ccc;
-   text-decoration: none;
-   font-family: 'Corben', cursive
+   font-family: 'Corben', cursive;
+ }
+
+ #navbar.navbar-header {
+   display: flex;
+   justify-content: flex-end;
  }
 
 .p {
@@ -54,3 +64,8 @@
   .clear {
     clear:both;
   }
+
+  .wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
