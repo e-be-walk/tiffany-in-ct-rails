@@ -1,7 +1,10 @@
 <h1><%= "Hello, #{@user.name}." %> </h1>
 
   <% if @user.site_admin? %>
-    <p>this will include a link to site- possibly iterating over site for tombstone info?</p>
+    <p>What would you like to do today?
+      <%= link_to('Create a new site', '/users/:user_id/sites/new') %>
+      Need link to iterate over sites, with update options</p>
+
   <% else %>
     <h2>Here is your Research Gallery.</h2>
   <% end %>
