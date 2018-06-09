@@ -11,24 +11,35 @@
   </head>
 
   <body>
-  <div id="body" class="tiffany-background">
-   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-     <div class="container">
-       <div class="wrapper">
-         <div id="navbar" class="navbar-header">
-         <a class="navbar" href="<%= root_url %>"/>Home </a>
-         <a class="navbar" href="<%= about_url %>"/>About </a>
-         <a class="navbar" href="<%= index_url %>"/>Index </a>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="container">
+         <a class="navbar-brand" href="<%= root_url %>"/>Home </a>
+         <a class="navbar-brand" href="<%= about_url %>"/>About </a>
+         <a class="navbar-brand" href="<%= index_url %>"/>Index </a>
          <% if @user %>
-             <a class="navbar" href="<%= logout_url %>"/>Log Out </a>
+             <a class="navbar-brand" href="<%= logout_url %>"/>Log Out </a>
          <% else %>
-           <a class="navbar" href="<%= new_user_url %>"/>Sign Up </a>
-           <a class="navbar" href="<%= signin_url %>"/>Sign In </a>
+           <a class="navbar-brand" href="<%= new_user_url %>"/>Sign Up </a>
+           <a class="navbar-brand" href="<%= signin_url %>"/>Sign In </a>
           <% end %>
+
+         </div>
+    </div>
+  </nav>
+
+<header class="masthead" style="background-image: url(<%= asset_path 'tiffanybackground.jpeg' %>)">
+  <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
         </div>
-       </div>
-     </div>
-   </div>
+      </div>
+    </div>
+</header>
    <div class="container" role="main">
      <div class="wrapper clearfix">
         <%= yield %>
