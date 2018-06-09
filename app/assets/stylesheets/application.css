@@ -58,3 +58,22 @@
   width: 960px;
   margin: 0 auto;
 }
+
+.site_container {
+  border-radius: 25px;
+  background-color: rgb(188, 170, 184);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Corben', cursive;
+}
+
+.info {
+  border-radius: 25px;
+  background-color: rgb(188, 170, 184);
+  padding: 20px;
+  display: inline-block;
+  width: 95%;
+  font-family: 'Corben', cursive;
+}

@@ -1,28 +1,32 @@
-<%= form_for [current_user, @site], url: user_sites_path, html: { multipart: true } do |f| %>
+<div class='site_container'>
+  <div class='form'>
+    <%= form_for [current_user, @site], url: user_sites_path, html: { multipart: true } do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
 
-  <%= f.label :street_address %>
-  <%= f.text_field :street_address %><br>
+      <%= f.label :street_address %><br>
+      <%= f.text_field :street_address %><br>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %><br>
+      <%= f.label :city %><br>
+      <%= f.text_field :city %><br>
 
-  <%= f.label :zip_code %>
-  <%= f.text_field :zip_code %><br>
+      <%= f.label :zip_code %><br>
+      <%= f.text_field :zip_code %><br>
 
-  <%= f.label :contact_info %>
-  <%= f.text_field :contact_info %><br>
+      <%= f.label :contact_info %><br>
+      <%= f.text_field :contact_info %><br>
 
-  <%= f.label :accessibility %>
-  <%= f.text_field :accessibility %><br>
+      <%= f.label :accessibility %><br>
+      <%= f.text_field :accessibility %><br>
 
-  <%= f.label :site_info %>
-  <%= f.text_field :site_info %><br>
+      <%= f.label :site_info %><br>
+      <%= f.text_area :site_info %><br>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %><br>
 
-  <%= f.submit "Create Your Site" %>
-<% end %>
+      <%= f.submit "Create Your Site" %>
+    <% end %>
+  </div>
+</div>
