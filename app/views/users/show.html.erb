@@ -1,7 +1,7 @@
-<h1><%= "Welcome, #{@user.name}." %> </h1>
+<h1><%= "Hello, #{@user.name}." %> </h1>
 
   <% if @user.site_admin? %>
     <p>this will include a link to site- possibly iterating over site for tombstone info?</p>
   <% else %>
-    <p>this will link to general user comments/notes/saved sites?</p>
+    <h2>Here is your Research Gallery.</h2>
   <% end %>
