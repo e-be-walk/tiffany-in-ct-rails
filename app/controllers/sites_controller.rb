@@ -2,7 +2,7 @@ class SitesController < ApplicationController
   before_action :current_user
 
   def show
-        @user = current_user
+    @user = current_user
     @site = Site.find_by(params[:user_id])
   end
 

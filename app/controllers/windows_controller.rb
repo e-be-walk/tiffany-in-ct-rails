@@ -3,20 +3,22 @@ class WindowsController < ApplicationController
 
   def show
     @user = current_user
-    @window = Window.find_by(id: params[:id])
+    @window = Window.find_by(params[:user_id])
   end
 
   def new
-    @user = current_user
+    @windows = current_user.windows
     @window = Window.new
+    @user = current_user
   end
 
   def create
-    @user = current_user
-    @window = Window.create(window_params)
+    @window = current_user.windows.create(window_params)
+    #raise params.inspect
     @window.save
-    redirect_to user_window_path
+    redirect_to window_path(current_user, @window)
   end
+
 
   private
 
