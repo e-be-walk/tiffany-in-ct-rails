@@ -1,21 +1,17 @@
 class SitesController < ApplicationController
-  before_action :current_user
-
   def show
+    @site = Site.find_by(id: params[:id])
     @user = current_user
-    @site = Site.find_by(params[:user_id])
   end
 
   def new
     @site = Site.new
-    @user = current_user
   end
 
   def create
-    @user = current_user
     @site = Site.create(site_params)
     @site.save
-    redirect_to site_path(current_user)
+    redirect_to site_path(@site)
   end
 
   private

@@ -1,9 +1,7 @@
 class WindowsController < ApplicationController
-  before_action :current_user
 
   def show
-    @user = current_user
-    @window = Window.find_by(params[:user_id])
+    @window = Window.find_by(params[:id])
   end
 
   def new
@@ -13,12 +11,11 @@ class WindowsController < ApplicationController
   end
 
   def create
-    @window = current_user.windows.create(window_params)
-    #raise params.inspect
+    @site = Site.find_by(params[:site_id])
+    @window = Window.create(window_params)
     @window.save
-    redirect_to window_path(current_user, @window)
+    redirect_to site_window_path
   end
-
 
   private
 

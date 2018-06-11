@@ -1,16 +1,16 @@
 <div class='site_container'>
-  <%= image_tag @site.image.url(:large) %><br>
 </div>
 <div class='info'>
-  <h1><%= "#{@site.name}" %></h1><br>
-  <h2><%= "#{@site.street_address}" %></h2><br>
-  <h2><%= "#{@site.city}" %></h2><br>
-  <h2><%= "#{@site.zip_code}" %></h2><br>
-  <h2><%= "#{@site.contact_info}" %></h2><br>
-  <h2><%= "#{@site.accessibility}" %></h2><br>
-  <p><%= "#{@site.site_info}" %></p><br>
+  <%= image_tag @site.image.url(:large) %>
+  <h1><%= "#{@site.name}" %></h1>
+  <h2><%= "#{@site.street_address}" %></h2>
+  <h2><%= "#{@site.city}" %></h2>
+  <h2><%= "#{@site.zip_code}" %></h2>
+  <h2><%= "#{@site.contact_info}" %></h2>
+  <h2><%= "#{@site.accessibility}" %></h2>
+  <p><%= "#{@site.site_info}" %></p>
 
   <% if @user.site_admin? %>
-  <%= link_to('Add a window to your site', new_user_window_path(current_user)) %>
+  <%= link_to('Add a window to your site', new_site_window_path(current_user)) %>
   <% end %>
 </div>
