@@ -11,6 +11,6 @@
   <p><%= "#{@site.site_info}" %></p><br>
 
   <% if @user.site_admin? %>
-  <%= link_to('Add a window to your site', '/:id/windows/new') %>
+  <%= link_to('Add a window to your site', new_user_window_path(current_user)) %>
   <% end %>
 </div>

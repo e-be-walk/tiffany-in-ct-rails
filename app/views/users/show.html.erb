@@ -3,6 +3,7 @@
   <% if @user.site_admin? %>
     <p>What would you like to do today?
       <%= link_to "Create a new site", new_user_site_path(current_user, @site) %>
+      <%= link_to "Create a new window", new_user_window_path(current_user, @window) %>
       Need link to iterate over sites, with update options</p>
 
   <% else %>
