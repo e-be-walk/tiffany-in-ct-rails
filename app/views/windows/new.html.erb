@@ -1,19 +1,23 @@
-<%= form_for @window, url: windows_path, html: { multipart: true } do |f| %>
+<div class='site_container'>
+  <div class='form'>
+    <%= form_for [current_user, @window], url: user_window_path, html: { multipart: true } do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
 
-  <%= f.label :year_created %>
-  <%= f.text_field :year_created %><br>
+    <%= f.label :year_created %>
+    <%= f.text_field :year_created %><br>
 
-  <%= f.label :dedication %>
-  <%= f.text_field :dedication %><br>
+    <%= f.label :dedication %>
+    <%= f.text_field :dedication %><br>
 
-  <%= f.label :window_info %>
-  <%= f.text_field :window_info %><br>
+    <%= f.label :window_info %>
+    <%= f.text_field :window_info %><br>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
 
-  <%= f.submit "Create A Window for your Site" %>
-<% end %>
+    <%= f.submit "Create A Window for your Site" %>
+  <% end %>
+  </div>
+</div>
