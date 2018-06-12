@@ -18,6 +18,7 @@ module TiffanyInCtRails
   end
 end
 
+require 'paperclip'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 require "mini_magick"

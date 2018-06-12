@@ -18,12 +18,14 @@ class SitesController < ApplicationController
   end
 
   def update
+    @site = Site.find_by(params[:id])
     @site.update(site_params)
     @site.save
     redirect_to site_path(@site)
   end
 
   def destroy
+    @site = Site.find_by(params[:id])
     @site.destroy
     redirect_to user_path(current_user)
   end
