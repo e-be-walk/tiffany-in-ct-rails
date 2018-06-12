@@ -8,6 +8,6 @@
   <h2><%= "#{@window.window_info}" %></h2><br>
 
   <% if @user.site_admin? %>
-  <%= link_to('Add a window to your site', new_user_window_path(current_user, @window)) %>
+  <%= link_to('Add a window to your site', new_site_window_path(current_user)) %>
   <% end %>
 </div>
