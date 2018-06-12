@@ -17,7 +17,7 @@ class WindowsController < ApplicationController
     @window = Window.create(window_params)
     @window.save
     redirect_to site_window_path(@site, @window)
-    end
+  end
 
 
   private
