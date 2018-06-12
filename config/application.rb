@@ -17,3 +17,8 @@ module TiffanyInCtRails
     # the framework and any gems in your application.
   end
 end
+
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+require "mini_magick"
+require 'json'

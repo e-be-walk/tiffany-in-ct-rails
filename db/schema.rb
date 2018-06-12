@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_001130) do
+ActiveRecord::Schema.define(version: 2018_06_12_121607) do
 
   create_table "sites", force: :cascade do |t|
     t.integer "user_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_06_07_001130) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "image"
   end
 
 end
