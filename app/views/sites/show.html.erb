@@ -11,6 +11,8 @@
   <p><%= "#{@site.site_info}" %></p>
 
   <% if @user.site_admin? %>
+  <%= link_to "Edit your site", edit_site_path %>
+  <%= link_to "Delete this site", site_path(current_user, @site), :confirm => "Are you sure?", :method => :delete %>
   <%= link_to('Add a window to your site', new_site_window_path(current_user)) %>
   <% end %>
 </div>

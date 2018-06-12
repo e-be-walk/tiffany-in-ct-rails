@@ -14,6 +14,20 @@ class SitesController < ApplicationController
     redirect_to site_path(@site)
   end
 
+  def edit
+  end
+
+  def update
+    @site.update(site_params)
+    @site.save
+    redirect_to site_path(@site)
+  end
+
+  def destroy
+    @site.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def site_params
