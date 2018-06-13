@@ -7,7 +7,4 @@
   <h2><%= "#{@window.dedication}" %></h2><br>
   <h2><%= "#{@window.window_info}" %></h2><br>
 
-  <% if @user.site_admin? %>
-  <%= link_to('Add a window to your site', new_site_window_path(current_user)) %>
-  <% end %>
 </div>

@@ -12,10 +12,11 @@ class WindowsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(params[:user_id])
-    @site = Site.find_by(params[:site_id])
+    @user = current_user
+    @site = Site.find(params[:site_id])
     @window = Window.create(window_params)
     @window.save
+    @site.windows << @window
     redirect_to site_window_path(@site, @window)
   end
 

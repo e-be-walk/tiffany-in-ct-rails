@@ -11,6 +11,7 @@ class SitesController < ApplicationController
   def create
     @site = Site.create(site_params)
     @site.save
+    current_user.sites << @site
     redirect_to site_path(@site)
   end
 
@@ -18,14 +19,14 @@ class SitesController < ApplicationController
   end
 
   def update
-    @site = Site.find_by(params[:id])
+    @site = Site.find(params[:id])
     @site.update(site_params)
     @site.save
     redirect_to site_path(@site)
   end
 
   def destroy
-    @site = Site.find_by(params[:id])
+    @site = Site.find(params[:id])
     @site.destroy
     redirect_to user_path(current_user)
   end
