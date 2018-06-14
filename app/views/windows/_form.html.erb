@@ -1,0 +1,30 @@
+<div class='site_container'>
+  <div class='form'>
+    <%= form_for [current_user, @window], url: site_windows_path(@site), html: { multipart: true } do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :year_created %>
+    <%= f.text_field :year_created %><br>
+
+    <%= f.label :dedication %>
+    <%= f.text_field :dedication %><br>
+
+    <%= f.label :window_info %>
+    <%= f.text_field :window_info %><br>
+
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.tiny.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %>
+      <% end %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "Submit this window", class:"submit" %>
+  <% end %>
+  </div>
+</div>

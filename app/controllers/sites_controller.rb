@@ -19,7 +19,7 @@ class SitesController < ApplicationController
   end
 
   def update
-    @site = Site.find(params[:id])
+    @site = Site.find(site_params[:id])
     @site.update(site_params)
     @site.save
     redirect_to site_path(@site)

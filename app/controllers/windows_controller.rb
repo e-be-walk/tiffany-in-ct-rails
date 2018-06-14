@@ -20,6 +20,22 @@ class WindowsController < ApplicationController
     redirect_to site_window_path(@site, @window)
   end
 
+  def edit
+  end
+
+  def update
+    @window = Window.find(params[:id])
+    @window.update(window_params)
+    @window.save
+    redirect_to window_path(@window)
+  end
+
+  def destroy
+    @window = Window.find(params[:id])
+    @window.destroy
+    redirect_to site_path(@site)
+  end
+
 
   private
 
