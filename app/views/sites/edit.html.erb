@@ -1,34 +1,5 @@
-<div class='site_container'>
-  <div class='form'>
+<h3>Edit Your Site:</h3>
 
 
-    <%= form_for @site, url: edit_site_path(@site), html: { multipart: true }, do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %><br>
-
-      <%= f.label :street_address %>
-      <%= f.text_field :street_address %><br>
-
-      <%= f.label :city %>
-      <%= f.text_field :city %><br>
-
-      <%= f.label :zip_code %>
-      <%= f.text_field :zip_code %><br>
-
-      <%= f.label :contact_info %>
-      <%= f.text_field :contact_info %><br>
-
-      <%= f.label :accessibility %>
-      <%= f.text_field :accessibility %><br>
-
-      <%= f.label :site_info %>
-      <%= f.text_field :site_info %><br>
-
-      <%= f.label :image %>
-      <%= f.file_field :image %>
-
-      <%= f.submit "Create Your Site" %>
-    <% end %>
-  </div>
-</div>
+<%= render partial: 'form', locals: {site: @site, current_user: current_user} %>

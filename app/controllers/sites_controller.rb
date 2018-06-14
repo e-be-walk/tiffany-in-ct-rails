@@ -9,10 +9,11 @@ class SitesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @site = Site.create(site_params)
     @site.save
     current_user.sites << @site
-    redirect_to site_path(@site)
+    redirect_to new_user_site_path(@site)
   end
 
   def edit
@@ -23,7 +24,7 @@ class SitesController < ApplicationController
     @site.update(site_params)
     @site.save
     current_user.sites << @site
-    redirect_to site_path(@site)
+    redirect_to user_site_path(@site)
   end
 
   def destroy
