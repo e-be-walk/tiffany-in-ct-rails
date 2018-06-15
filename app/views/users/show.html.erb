@@ -1,7 +1,8 @@
 <h1><%= "Hello, #{@user.name}." %> </h1>
 
-  <% if @user.site_admin? %>
+
     <p>What would you like to do today?
+<<<<<<< HEAD
       <%= link_to "Create a new site", new_site_path(current_user, @site) %>
       <%= link_to "Create a new window", new_site_window_path(current_user, @window) %>
       Need link to iterate over sites, with update options</p>
@@ -9,3 +10,11 @@
   <% else %>
     <h2>Here is your Research Gallery.</h2>
   <% end %>
+=======
+      <%= link_to "Create a new site", new_user_site_path(current_user, @site) %><br>
+      <p>Update one of your existing sites:</p>
+      <% current_user.sites.each do |site| %>
+      <%= image_tag site.image.url(:medium) %><br>
+      <%= link_to "View or update this site", user_site_path(current_user, @site) %><br>
+      <%end%>
+>>>>>>> 60ec49cea0ad77e9f4876d77c344c38d4b9fe977

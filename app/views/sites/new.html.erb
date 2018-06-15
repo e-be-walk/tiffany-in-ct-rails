@@ -1,32 +1,14 @@
-<div class='site_container'>
-  <div class='form'>
-    <%= form_for @site, url: sites_path, html: { multipart: true } do |f| %>
+<h3>Create a New Site:</h3>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %><br>
-
-      <%= f.label :street_address %>
-      <%= f.text_field :street_address %><br>
-
-      <%= f.label :city %>
-      <%= f.text_field :city %><br>
-
-      <%= f.label :zip_code %>
-      <%= f.text_field :zip_code %><br>
-
-      <%= f.label :contact_info %>
-      <%= f.text_field :contact_info %><br>
-
-      <%= f.label :accessibility %>
-      <%= f.text_field :accessibility %><br>
-
-      <%= f.label :site_info %>
-      <%= f.text_field :site_info %><br>
-
-      <%= f.label :image %>
-      <%= f.file_field :image %>
-
-      <%= f.submit "Create Your Site" %>
+<% if @site.errors.any? %>
+  <div id="error_explanation">
+    <h2> Your site was not added. </h2>
+    <ul>
+    <% @site.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
+    </ul>
   </div>
-</div>
+<% end %>
+
+<%= render partial: 'form', locals: {site: @site, current_user: current_user} %>
