@@ -22,7 +22,6 @@ class SitesController < ApplicationController
     @site = Site.find(site_params[:id])
     @site.update(site_params)
     @site.save
-    current_user.sites << @site
     redirect_to site_path(@site)
   end
 

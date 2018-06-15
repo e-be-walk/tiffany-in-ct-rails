@@ -17,21 +17,17 @@ class WindowsController < ApplicationController
     @window = Window.create(window_params)
     @window.save
     @site.windows << @window
-    #raise params.inspect
     redirect_to site_window_path(@site, @window)
   end
 
   def edit
-    #@user = current_user
-    @site = Site.find(params[:site_id])
-    @window = Window.find(params[:id])
   end
 
   def update
     @window = Window.find(params[:id])
     @window.update(window_params)
     @window.save
-    redirect_to site_window_path(@window)
+    redirect_to window_path(@window)
   end
 
   def destroy
